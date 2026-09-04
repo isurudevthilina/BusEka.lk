@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "buseka",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-09-04",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "buseka",
+      // Run `npx wrangler d1 create buseka` after `npx wrangler login`, then paste the id here.
+      "database_id": "PASTE_D1_ID_HERE"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      // Run `npx wrangler kv namespace create CACHE` after `npx wrangler login`, then paste the id here.
+      "id": "PASTE_KV_ID_HERE"
+    }
+  ],
+  "ai": { "binding": "AI" },
+  "observability": { "enabled": true }
+}
