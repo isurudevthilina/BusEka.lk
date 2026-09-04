@@ -5,3 +5,4 @@ dist
 .DS_Store
 *.local
 worker-configuration.d.ts
+stitch_buseka.lk
