@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#020C1B"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#00BBF9"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEE440"/>
+      <stop offset="100%" stop-color="#F72585"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Tech Background -->
+  <rect width="512" height="512" rx="100" fill="url(#darkBg)"/>
+
+  <!-- Monogram Logo: Stylized "B" forming a high-tech electric Sri Lankan smart bus -->
+  <g transform="translate(136, 95)">
+    <!-- Speed Wings / Route Lines behind -->
+    <path d="M 0 170 L 60 170" stroke="#1E3A8A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 15 195 L 55 195" stroke="#1E3A8A" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Left Spine of B / Bus Back Pillar -->
+    <rect x="50" y="10" width="30" height="190" rx="15" fill="url(#accentGrad)"/>
+
+    <!-- Upper Loop of B / Bus Roof & Front Windshield -->
+    <path d="M 70 10 L 140 10 C 180 10, 205 32, 205 68 C 205 102, 175 110, 140 110 L 70 110 Z" fill="none" stroke="url(#accentGrad)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- Lower Loop of B / Lower Bus Chassis & Grill -->
+    <path d="M 70 100 L 145 100 C 188 100, 215 125, 215 160 C 215 195, 185 200, 145 200 L 70 200 Z" fill="none" stroke="url(#accentGrad)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- Bus Glass reflection in upper loop -->
+    <rect x="96" y="36" width="60" height="46" rx="8" fill="#0A192F"/>
+
+    <!-- Yellow Bus Headlight Glow (Sri Lankan Transit flavor) -->
+    <circle cx="176" cy="155" r="14" fill="url(#goldGrad)"/>
+
+    <!-- Digital Connectivity Dot -->
+    <circle cx="215" cy="55" r="8" fill="#FEE440"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="256" y="375" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" letter-spacing="0.5">
+    Bus<tspan fill="#00F5D4">Eka</tspan><tspan fill="#FEE440" font-size="34">.lk</tspan>
+  </text>
+  
+  <text x="256" y="415" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="14" fill="#94A3B8" letter-spacing="4">
+    SRI LANKA SMART TRANSIT
+  </text>
+
+  <!-- Modern pill indicator tag -->
+  <g transform="translate(196, 435)">
+    <rect width="120" height="24" rx="12" fill="#0F2847"/>
+    <circle cx="18" cy="12" r="5" fill="#00F5D4"/>
+    <text x="32" y="16" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10" fill="#93C5FD" letter-spacing="1">LIVE GPS</text>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* BusEka Design System */
+@layer base {
+  :root {
+    --primary: #003ec7;
+    --live-green: #00C853;
+    --secondary: #006e2a;
+    --warning-amber: #F59E0B;
+    --error: #ba1a1a;
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #fbf8ff;
+    color: #191b25;
+  }
+
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+
+  *::-webkit-scrollbar { display: none; }
+  * { scrollbar-width: none; }
+
+  /* Material Symbols */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+/* Leaflet map fix */
+.leaflet-container {
+  font-family: 'Inter', sans-serif;
+  z-index: 0;
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'surface-bright': '#fbf8ff', 'secondary-fixed': '#69ff87', 'surface': '#fbf8ff', 'surface-dark': '#0F172A', 'error': '#ba1a1a', 'on-secondary-fixed': '#002108', 'on-primary-fixed': '#001452', 'on-error': '#ffffff', 'secondary-container': '#5cfd80', 'surface-container-low': '#f3f2ff', 'surface-container-high': '#e7e7f5', 'error-red-bg': '#FEE2E2', 'stale-grey': '#94A3B8', 'on-tertiary': '#ffffff', 'on-tertiary-container': '#ffddd5', 'on-secondary': '#ffffff', 'on-tertiary-fixed-variant': '#891e00', 'tertiary': '#952200', 'on-error-container': '#93000a', 'live-green-bg': '#E8F8EE', 'primary': '#003ec7', 'tertiary-fixed-dim': '#ffb4a1', 'error-container': '#ffdad6', 'outline-variant': '#c3c5d9', 'inverse-surface': '#2e303a', 'tertiary-container': '#bf3003', 'error-red': '#EF4444', 'surface-variant': '#e1e1ef', 'tertiary-fixed': '#ffdbd2', 'inverse-on-surface': '#f0effe', 'on-secondary-container': '#00732c', 'surface-container-highest': '#e1e1ef', 'inverse-primary': '#b7c4ff', 'surface-container-lowest': '#ffffff', 'surface-container': '#ededfb', 'primary-fixed': '#dde1ff', 'on-primary-fixed-variant': '#0038b6', 'warning-amber': '#F59E0B', 'secondary': '#006e2a', 'surface-light': '#F8FAFC', 'live-green': '#00C853', 'secondary-fixed-dim': '#3ce36a', 'surface-tint': '#004ced', 'on-primary': '#ffffff', 'primary-fixed-dim': '#b7c4ff', 'outline': '#737688', 'background': '#fbf8ff', 'on-surface-variant': '#434656', 'primary-container': '#0052ff', 'on-tertiary-fixed': '#3c0800', 'on-secondary-fixed-variant': '#00531e', 'warning-amber-bg': '#FEF3C7', 'on-background': '#191b25', 'on-surface': '#191b25', 'on-primary-container': '#dfe3ff', 'surface-dim': '#d9d9e7' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'gutter-xs': '4px', 'touch-min': '44px', 'gutter-lg': '24px', 'gutter-md': '16px', 'gutter-xl': '32px', 'gutter-sm': '8px' }, 'fontFamily': { 'headline-xl': ['Inter'], 'headline-md': ['Inter'], 'headline-lg': ['Inter'], 'body-md': ['Inter'], 'body-lg': ['Inter'], 'body-sm': ['Inter'], 'label-md': ['Inter'], 'headline-sm': ['Inter'], 'label-sm': ['Inter'], 'mono-code': ['"JetBrains Mono, monospace"'] }, 'fontSize': { 'headline-xl': ['32px', { 'lineHeight': '40px', 'fontWeight': '700' }], 'headline-md': ['20px', { 'lineHeight': '28px', 'fontWeight': '600' }], 'headline-lg': ['24px', { 'lineHeight': '32px', 'fontWeight': '600' }], 'body-md': ['15px', { 'lineHeight': '22px', 'fontWeight': '400' }], 'body-lg': ['16px', { 'lineHeight': '24px', 'fontWeight': '400' }], 'body-sm': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'label-md': ['14px', { 'lineHeight': '20px', 'fontWeight': '500' }], 'headline-sm': ['16px', { 'lineHeight': '24px', 'fontWeight': '600' }], 'label-sm': ['12px', { 'lineHeight': '16px', 'fontWeight': '500' }], 'mono-code': ['18px', { 'lineHeight': '24px', 'letterSpacing': '0.1em', 'fontWeight': '600' }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-md flex items-center justify-between"><div class="flex items-center gap-gutter-sm"><button aria-label="Go back" class="w-touch-min h-touch-min -ml-2 flex items-center justify-center text-on-surface hover:bg-surface-variant/40 rounded-full transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Minimalist clean modern bus inside a white rounded box with subtle drop shadow, sleek electric transit aesthetic with vibrant teal and amber accents, no text. Brand logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VjchyTnkh6wIrIpoQAfWbWKLL27fdKuqMynBhpGD4mA30hJaL4SQsDOuyDBp32z61zuWFPloxqQPYDszo-YIactM0qodblCKQeieEUJhnPBkB0EbXwQcMrbSYoQm5U0Q0oVLShjP1KDnijLyWXrOYcv1Ymedc5uZA1rQSItnGpEkzhnk5Tad8iHFC9nR5vVRTlEtgrIyWyfO8Gdgw4rMRo8r3JZxH1edRZYF8QY9xt4QVthf5jKhm9VukU"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Active Ride Tracking</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Interactive State Selector Pill Switcher for QA & Live Demonstration -->
+<div class="px-gutter-md pt-3 pb-2">
+<div class="bg-surface-container-high p-1 rounded-xl flex items-center gap-1 shadow-sm">
+<button class="flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-on-surface font-semibold shadow-sm" id="tab-idle" onclick="switchDriverState('idle')">
+        1. Idle
+      </button>
+<button class="flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="tab-broadcasting" onclick="switchDriverState('broadcasting')">
+        2. Live
+      </button>
+<button class="flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="tab-blocked" onclick="switchDriverState('blocked')">
+        3. Blocked
+      </button>
+</div>
+</div>
+<!-- Vehicle Identity Card (Uber Driver Style Monospace & High Contrast) -->
+<div class="px-gutter-md py-3">
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">directions_bus</span>
+<h2 class="font-headline-md text-headline-md text-on-surface truncate tracking-tight">Lyceum Van 12</h2>
+</div>
+<div class="mt-1 flex items-center gap-2">
+<span class="font-mono-code text-mono-code text-on-surface bg-surface-container px-2.5 py-0.5 rounded tracking-wider uppercase">
+            WP CAB-1234
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Colombo 07</span>
+</div>
+</div>
+<!-- Live Dynamic Status Indicator -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant" id="vehicle-status-pill">
+<span class="w-2.5 h-2.5 rounded-full bg-stale-grey" id="vehicle-status-dot"></span>
+<span class="font-label-sm text-label-sm uppercase font-semibold tracking-wider" id="vehicle-status-label">OFFLINE</span>
+</div>
+</div>
+</div>
+<!-- Driver Ergonomic View Container -->
+<div class="px-gutter-md flex flex-col gap-4">
+<!-- ================= STATE 1: IDLE ================= -->
+<div class="flex flex-col gap-4" id="view-idle">
+<!-- Quick Info Bar -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface text-[22px]">route</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Morning School Drop-off</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Nugegoda → Cinnamon Gardens</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-on-surface">14.2 km</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Approx 35m</div>
+</div>
+</div>
+<!-- Enormous Primary Start Trip Button (120px+ Touch Ergonomics for Drivers) -->
+<button class="w-full min-h-[132px] rounded-xl bg-secondary hover:bg-secondary/90 active:scale-[0.99] transition-transform flex flex-col items-center justify-center text-on-secondary shadow-md px-6 select-none cursor-pointer" onclick="startBroadcastAction()">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[44px]">play_circle</span>
+<span class="font-headline-xl text-headline-xl tracking-tight uppercase">START TRIP</span>
+</div>
+<span class="font-label-md text-label-md text-on-secondary/90 mt-1 uppercase tracking-widest font-semibold">Begin GPS Transmission</span>
+</button>
+<!-- Simulated Demo Button -->
+<button class="w-full min-h-touch-min py-3.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" onclick="simulateRouteAction()">
+<span class="material-symbols-outlined text-[20px] text-primary">navigation</span>
+<span>Simulate route (demo)</span>
+</button>
+<!-- Driver Privacy & Security Notice -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-sm text-headline-sm text-on-surface">Guaranteed Parent-Only Privacy</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Your real-time GPS location is encrypted and broadcast only to parents holding this van’s verified token code. All tracking completely halts when you press “End trip”.
+          </p>
+</div>
+</div>
+<!-- Trip Preparation Checklist (Compact Cards for High Ergonomics) -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-live-green-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">battery_charging_full</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Phone Battery</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">92% • Plugged</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-live-green-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">network_cell</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Dialog 4G Signal</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Strong (Good)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= STATE 2: BROADCASTING ================= -->
+<div class="hidden flex-col gap-4" id="view-broadcasting">
+<!-- Live Broadcasting Pulsing Status Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative flex items-center justify-center">
+<span class="relative flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">LIVE BROADCASTING</span>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold px-2 py-0.2 rounded">ACTIVE</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Sending 1s GPS coordinates to cloud</div>
+</div>
+</div>
+<div class="font-mono-code text-mono-code text-secondary font-bold" id="live-timer">00:04:12</div>
+</div>
+<!-- Telemetry Stats Grid (Sunlight legibility & High contrast) -->
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[22px] mb-1">gps_fixed</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">±8 m</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">GPS Accuracy</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[22px] mb-1">cell_tower</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="ping-count">14 pings</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sent live</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary text-[22px] mb-1">visibility</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">3 parents</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Watching now</span>
+</div>
+</div>
+<!-- Sleek Mini Radar / Road Tracker Preview -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden shadow-sm bg-surface-dark">
+<div class="w-full h-full bg-cover bg-center opacity-85" data-location="Colombo 07, Sri Lanka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArHSFeCj-Zy8xv8Ptx5YIS0gAvZ83_-pQNmCgdYLZZ_1GkIprQpxUspoCgz6ysxc9JNl5dxlILXvoEudcA5cyub60RzCLjEVJW_CvxunO-6ze1W2a750H2eW9yT9UsmWC3IDevw7Bkibxgpnvsr0hWlgAgCxP_H9-RKbNcj_GXeob5AJMasVkK_0v6EEOjYBnzDutdZwlDVgQFqUy8JvWf2ImvyrJiqa7IGsZMgPzKemwpeTGsFgygcQ')"></div>
+<!-- Scrim and Road tracking overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/90 via-surface-dark/30 to-transparent flex flex-col justify-between p-3 pointer-events-none">
+<div class="flex items-center justify-between">
+<span class="bg-surface-dark/80 backdrop-blur-sm text-surface-bright font-label-sm text-label-sm px-2.5 py-1 rounded-full flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Baudhaloka Mawatha, Colombo
+            </span>
+<span class="bg-surface-dark/80 backdrop-blur-sm text-surface-bright font-label-sm text-label-sm px-2 py-1 rounded-full">
+              34 km/h
+            </span>
+</div>
+<div class="flex items-center justify-between text-surface-bright">
+<div class="flex items-center gap-1.5 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">near_me</span>
+<span>Next stop: Reid Avenue Junction (1.2 km)</span>
+</div>
+<div class="font-label-sm text-label-sm text-stale-grey">Updated just now</div>
+</div>
+</div>
+<!-- Radar Pulse Center Element -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-primary/20 animate-ping absolute"></div>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg text-on-primary">
+<span class="material-symbols-outlined text-[18px]">directions_bus</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Parents on this Route Live Snippet -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Active Parent Listeners</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">3 Connected</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">AK</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">NS</div>
+<div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">RM</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Anushka, Niluka, and Roshan are viewing live distance.</span>
+</div>
+</div>
+<!-- Enormous Emergency-Style Red Button: END TRIP -->
+<button class="w-full min-h-[120px] rounded-xl bg-error hover:bg-error/90 active:scale-[0.99] transition-transform flex flex-col items-center justify-center text-on-error shadow-md px-6 select-none cursor-pointer" onclick="endBroadcastAction()">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[40px]">stop_circle</span>
+<span class="font-headline-xl text-headline-xl tracking-tight uppercase">END TRIP</span>
+</div>
+<span class="font-label-md text-label-md text-on-error/90 mt-1 uppercase tracking-widest font-semibold">Stop Sharing GPS Location</span>
+</button>
+</div>
+<!-- ================= STATE 3: PERMISSION BLOCKED ================= -->
+<div class="hidden flex-col gap-4" id="view-blocked">
+<!-- High-Contrast Amber Warning Banner Card -->
+<div class="bg-warning-amber-bg rounded-xl p-5 shadow-sm">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-warning-amber flex items-center justify-center flex-shrink-0 text-surface-dark">
+<span class="material-symbols-outlined text-[26px]">location_disabled</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-surface-dark font-bold">Location is blocked for this site</h3>
+<p class="font-body-md text-body-md text-surface-dark mt-1 font-medium">
+              BusEka cannot broadcast your van position to parents without device GPS permission enabled in Chrome.
+            </p>
+</div>
+</div>
+</div>
+<!-- Simple 3-Step Driver Recovery Guide (Large, Clear, Low-Friction) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm text-on-surface">Follow these 2 quick steps:</div>
+<!-- Step 1 -->
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">
+            1
+          </div>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Tap the Padlock icon</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+              Located next to <span class="font-mono-code text-label-sm font-semibold">buseka.lk</span> in your top browser bar.
+            </div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">
+            2
+          </div>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Toggle Location to “Allow”</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+              Switch permissions from “Blocked” to “Allowed” or “Clear reset”.
+            </div>
+</div>
+</div>
+</div>
+<!-- Enormous Try Again Action Button -->
+<button class="w-full min-h-touch-min py-4 rounded-xl bg-primary hover:bg-primary/95 active:scale-[0.99] transition-transform text-on-primary flex items-center justify-center gap-2 shadow-sm font-headline-sm text-headline-sm font-semibold uppercase tracking-wider" onclick="requestGpsRetry()">
+<span class="material-symbols-outlined text-[24px]">refresh</span>
+<span>Try Again • Request GPS</span>
+</button>
+<!-- Driver Phone Support Fallback -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">headset_mic</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Need Driver Dispatch Help?</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Colombo Transit Dispatch (24/7)</div>
+</div>
+</div>
+<a class="px-3.5 py-2 rounded-lg bg-surface-container font-label-md text-label-md text-primary font-semibold flex items-center gap-1" href="tel:0112345678">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let pingCounter = 14;
+  let timerSeconds = 252; // 04:12
+  let broadcastInterval = null;
+
+  function switchDriverState(state) {
+    const viewIdle = document.getElementById('view-idle');
+    const viewBroadcasting = document.getElementById('view-broadcasting');
+    const viewBlocked = document.getElementById('view-blocked');
+
+    const tabIdle = document.getElementById('tab-idle');
+    const tabBroadcasting = document.getElementById('tab-broadcasting');
+    const tabBlocked = document.getElementById('tab-blocked');
+
+    const statusPill = document.getElementById('vehicle-status-pill');
+    const statusDot = document.getElementById('vehicle-status-dot');
+    const statusLabel = document.getElementById('vehicle-status-label');
+
+    // Reset tabs
+    [tabIdle, tabBroadcasting, tabBlocked].forEach(tab => {
+      tab.className = "flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface";
+    });
+
+    // Reset views
+    viewIdle.classList.add('hidden');
+    viewBroadcasting.classList.add('hidden');
+    viewBlocked.classList.add('hidden');
+
+    if (state === 'idle') {
+      viewIdle.classList.remove('hidden');
+      tabIdle.className = "flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-on-surface font-semibold shadow-sm";
+      
+      statusPill.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant";
+      statusDot.className = "w-2.5 h-2.5 rounded-full bg-stale-grey";
+      statusLabel.textContent = "OFFLINE";
+      clearInterval(broadcastInterval);
+    } else if (state === 'broadcasting') {
+      viewBroadcasting.classList.remove('hidden');
+      tabBroadcasting.className = "flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-secondary font-semibold shadow-sm";
+      
+      statusPill.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container";
+      statusDot.className = "w-2.5 h-2.5 rounded-full bg-secondary animate-pulse";
+      statusLabel.textContent = "LIVE TRANSMIT";
+      
+      startPingsSimulation();
+    } else if (state === 'blocked') {
+      viewBlocked.classList.remove('hidden');
+      tabBlocked.className = "flex-1 py-2 text-center rounded-lg font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-warning-amber font-semibold shadow-sm";
+      
+      statusPill.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning-amber-bg text-on-surface";
+      statusDot.className = "w-2.5 h-2.5 rounded-full bg-warning-amber";
+      statusLabel.textContent = "GPS BLOCKED";
+      clearInterval(broadcastInterval);
+    }
+  }
+
+  function startBroadcastAction() {
+    switchDriverState('broadcasting');
+  }
+
+  function simulateRouteAction() {
+    switchDriverState('broadcasting');
+  }
+
+  function endBroadcastAction() {
+    if (confirm("Are you sure you want to end this trip? Real-time location sharing with parents will stop immediately.")) {
+      switchDriverState('idle');
+    }
+  }
+
+  function requestGpsRetry() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        () => {
+          alert("GPS permission allowed successfully!");
+          switchDriverState('idle');
+        },
+        () => {
+          alert("GPS remains blocked in browser settings. Please toggle permission for this site.");
+        }
+      );
+    } else {
+      alert("Geolocation is not supported on this device.");
+    }
+  }
+
+  function startPingsSimulation() {
+    clearInterval(broadcastInterval);
+    broadcastInterval = setInterval(() => {
+      pingCounter++;
+      timerSeconds++;
+      const countEl = document.getElementById('ping-count');
+      const timerEl = document.getElementById('live-timer');
+      
+      if (countEl) countEl.textContent = `${pingCounter} pings`;
+      if (timerEl) {
+        const mins = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+        const secs = String(timerSeconds % 60).padStart(2, '0');
+        timerEl.textContent = `00:${mins}:${secs}`;
+      }
+    }, 1500);
+  }
+</script></main></body></html>

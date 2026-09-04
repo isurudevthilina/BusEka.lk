@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="slRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E63946"/>
+      <stop offset="100%" stop-color="#B7094C"/>
+    </linearGradient>
+    <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F4A261"/>
+      <stop offset="50%" stop-color="#E76F51"/>
+      <stop offset="100%" stop-color="#2A9D8F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Minimalist White Background -->
+  <rect width="512" height="512" rx="100" fill="#F8FAFC"/>
+  <rect x="12" y="12" width="488" height="488" rx="88" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+
+  <!-- Logo Mark: Fast Forward Transit Pin -->
+  <g transform="translate(136, 80)">
+    <!-- Location Pin Outline framing the Bus -->
+    <path d="M 120 10 C 60 10, 15 58, 15 118 C 15 178, 95 242, 120 258 C 145 242, 225 178, 225 118 C 225 58, 180 10, 120 10 Z" fill="url(#slRedGrad)"/>
+    
+    <!-- Inner Cutout / Bus Profile Silhouette -->
+    <rect x="55" y="55" width="130" height="105" rx="22" fill="#FFFFFF"/>
+    
+    <!-- Windshield -->
+    <rect x="68" y="68" width="104" height="40" rx="10" fill="#1E293B"/>
+    <line x1="120" y1="68" x2="120" y2="108" stroke="#FFFFFF" stroke-width="3"/>
+    
+    <!-- Headlights & Bumper -->
+    <circle cx="78" cy="132" r="8" fill="#F4A261"/>
+    <circle cx="162" cy="132" r="8" fill="#F4A261"/>
+    <line x1="96" y1="132" x2="144" y2="132" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Bottom Transit Route Lines -->
+    <circle cx="120" cy="275" r="7" fill="#B7094C"/>
+  </g>
+
+  <!-- Transit Motion Lines below Pin -->
+  <path d="M 160 365 Q 256 345 352 365" fill="none" stroke="url(#trackGrad)" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Typography -->
+  <text x="256" y="415" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="46" fill="#0F172A" letter-spacing="-0.5">
+    Bus<tspan fill="#E63946">Eka</tspan><tspan fill="#2A9D8F" font-size="34">.lk</tspan>
+  </text>
+  <text x="256" y="445" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14" fill="#64748B" letter-spacing="3">
+    LIVE BUS TRACKING &amp; ROUTES
+  </text>
+</svg>

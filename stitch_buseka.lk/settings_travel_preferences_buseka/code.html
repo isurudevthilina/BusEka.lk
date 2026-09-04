@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'surface-bright': '#fbf8ff', 'secondary-fixed': '#69ff87', 'surface': '#fbf8ff', 'surface-dark': '#0F172A', 'error': '#ba1a1a', 'on-secondary-fixed': '#002108', 'on-primary-fixed': '#001452', 'on-error': '#ffffff', 'secondary-container': '#5cfd80', 'surface-container-low': '#f3f2ff', 'surface-container-high': '#e7e7f5', 'error-red-bg': '#FEE2E2', 'stale-grey': '#94A3B8', 'on-tertiary': '#ffffff', 'on-tertiary-container': '#ffddd5', 'on-secondary': '#ffffff', 'on-tertiary-fixed-variant': '#891e00', 'tertiary': '#952200', 'on-error-container': '#93000a', 'live-green-bg': '#E8F8EE', 'primary': '#003ec7', 'tertiary-fixed-dim': '#ffb4a1', 'error-container': '#ffdad6', 'outline-variant': '#c3c5d9', 'inverse-surface': '#2e303a', 'tertiary-container': '#bf3003', 'error-red': '#EF4444', 'surface-variant': '#e1e1ef', 'tertiary-fixed': '#ffdbd2', 'inverse-on-surface': '#f0effe', 'on-secondary-container': '#00732c', 'surface-container-highest': '#e1e1ef', 'inverse-primary': '#b7c4ff', 'surface-container-lowest': '#ffffff', 'surface-container': '#ededfb', 'primary-fixed': '#dde1ff', 'on-primary-fixed-variant': '#0038b6', 'warning-amber': '#F59E0B', 'secondary': '#006e2a', 'surface-light': '#F8FAFC', 'live-green': '#00C853', 'secondary-fixed-dim': '#3ce36a', 'surface-tint': '#004ced', 'on-primary': '#ffffff', 'primary-fixed-dim': '#b7c4ff', 'outline': '#737688', 'background': '#fbf8ff', 'on-surface-variant': '#434656', 'primary-container': '#0052ff', 'on-tertiary-fixed': '#3c0800', 'on-secondary-fixed-variant': '#00531e', 'warning-amber-bg': '#FEF3C7', 'on-background': '#191b25', 'on-surface': '#191b25', 'on-primary-container': '#dfe3ff', 'surface-dim': '#d9d9e7' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'gutter-xs': '4px', 'touch-min': '44px', 'gutter-lg': '24px', 'gutter-md': '16px', 'gutter-xl': '32px', 'gutter-sm': '8px' }, 'fontFamily': { 'headline-xl': ['Inter'], 'headline-md': ['Inter'], 'headline-lg': ['Inter'], 'body-md': ['Inter'], 'body-lg': ['Inter'], 'body-sm': ['Inter'], 'label-md': ['Inter'], 'headline-sm': ['Inter'], 'label-sm': ['Inter'], 'mono-code': ['"JetBrains Mono, monospace"'] }, 'fontSize': { 'headline-xl': ['32px', { 'lineHeight': '40px', 'fontWeight': '700' }], 'headline-md': ['20px', { 'lineHeight': '28px', 'fontWeight': '600' }], 'headline-lg': ['24px', { 'lineHeight': '32px', 'fontWeight': '600' }], 'body-md': ['15px', { 'lineHeight': '22px', 'fontWeight': '400' }], 'body-lg': ['16px', { 'lineHeight': '24px', 'fontWeight': '400' }], 'body-sm': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'label-md': ['14px', { 'lineHeight': '20px', 'fontWeight': '500' }], 'headline-sm': ['16px', { 'lineHeight': '24px', 'fontWeight': '600' }], 'label-sm': ['12px', { 'lineHeight': '16px', 'fontWeight': '500' }], 'mono-code': ['18px', { 'lineHeight': '24px', 'letterSpacing': '0.1em', 'fontWeight': '600' }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-md flex items-center justify-between"><div class="flex items-center gap-gutter-sm"><img alt="Minimalist clean modern bus inside a white rounded box with subtle drop shadow, sleek electric transit aesthetic with vibrant teal and amber accents, no text. Brand logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VjchyTnkh6wIrIpoQAfWbWKLL27fdKuqMynBhpGD4mA30hJaL4SQsDOuyDBp32z61zuWFPloxqQPYDszo-YIactM0qodblCKQeieEUJhnPBkB0EbXwQcMrbSYoQm5U0Q0oVLShjP1KDnijLyWXrOYcv1Ymedc5uZA1rQSItnGpEkzhnk5Tad8iHFC9nR5vVRTlEtgrIyWyfO8Gdgw4rMRo8r3JZxH1edRZYF8QY9xt4QVthf5jKhm9VukU"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold leading-none">BusEka</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Sri Lanka</span></div></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm text-on-surface">More Hub</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-md pb-gutter-xl space-y-gutter-lg">
+<!-- Dilshan Perera Profile Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md flex flex-col gap-gutter-md">
+<div class="flex items-center gap-gutter-md">
+<div class="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Warm natural portrait of a young Sri Lankan commuter smiling outdoors against soft Colombo city morning light, high key minimalist portrait style, warm tones, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4kfp6rD8OLoUcYipQxOm10QXBxo9eP3OO61dKEc_mheosPEYxHFtlUU9xfC244nHWaPYXBz3hcmd6hMXryrgaSKzxLD97vuyHgtahvsfrJbBtPmxeI23Gv4cyYV_XIWYuvYPnbqa8xst9DTrRtyh-_gOtBMhnfO5wjHoUJMizFF-95vK-BEgg8orOKWZDxiP2PEnnN2gJq9Zb4l0R9lP989PNDcRVxVKxzgC3ZeDreXXCtfdssvDlIQ"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-live-green rounded-full shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-gutter-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Dilshan Perera</h2>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Daily Commuter • Colombo – Galle Corridor</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-mono-code text-label-sm text-on-surface-variant">+94 77 123 4567</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-live-green-bg text-secondary font-label-sm text-[10px]">Active</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<!-- Quick Language Selector -->
+<div class="flex items-center justify-between pt-gutter-xs bg-surface-container-low/70 p-1.5 rounded-xl">
+<button class="flex-1 py-1.5 text-center rounded-lg bg-surface-container-lowest shadow-sm font-label-md text-label-md text-primary font-semibold transition-all" type="button">
+        English
+      </button>
+<button class="flex-1 py-1.5 text-center rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+        සිංහල
+      </button>
+<button class="flex-1 py-1.5 text-center rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+        தமிழ்
+      </button>
+</div>
+</section>
+<!-- Travel & Smart Alerts -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between px-gutter-xs">
+<div class="flex items-center gap-gutter-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">notifications_active</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Travel &amp; Smart Alerts</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">3 Active</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md space-y-gutter-md">
+<!-- Toggle 1 -->
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex gap-gutter-sm flex-1 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">traffic</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">High-Traffic Route Alerts</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">Push alerts when Galle Rd or Southern Expressway exceeds 10m delay.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 touch-min">
+<input checked="" class="sr-only peer toggle-action" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-surface-container-low w-full"></div>
+<!-- Toggle 2 -->
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex gap-gutter-sm flex-1 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Upcoming Bus Arrival Chime</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">5-minute proximity warning chime for pinned bus stops.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 touch-min">
+<input checked="" class="sr-only peer toggle-action" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-surface-container-low w-full"></div>
+<!-- Toggle 3 -->
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex gap-gutter-sm flex-1 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">airport_shuttle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Van Group Departure Pings</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">Instant alerts when Lyceum Van 12 starts trip.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 touch-min">
+<input checked="" class="sr-only peer toggle-action" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Commuter Accessibility Mode -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center gap-gutter-xs px-gutter-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">accessible</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Transit Accessibility</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md space-y-gutter-md">
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex gap-gutter-sm flex-1 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">accessible_forward</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Accessibility Preference Mode</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">Filter low-floor, wheelchair ramps, and priority seating on NTC &amp; SLTB coaches.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 touch-min">
+<input checked="" class="sr-only peer toggle-action" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-surface-container-low w-full"></div>
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex gap-gutter-sm flex-1 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">headphones</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Voice Stop Announcements</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">Sinhala &amp; English bilingual turn-by-turn stop audio through headphones.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 touch-min">
+<input class="sr-only peer toggle-action" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Saved Favorite Routes -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between px-gutter-xs">
+<div class="flex items-center gap-gutter-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Favorite Routes</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Pinned</span>
+</div>
+<!-- Route 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-gutter-xs">
+<span class="px-2 py-0.5 rounded-md bg-primary text-on-primary font-mono-code text-label-sm font-semibold">383/2</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Colombo Fort ⇄ Ambalangoda</span>
+</div>
+<button class="text-warning-amber flex items-center justify-center p-1" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="flex items-center gap-gutter-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px] text-primary">mode_fan</span> Semi-Luxury AC
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-live-green-bg text-secondary font-label-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-live-green animate-pulse"></span> 3 Stops Tracked
+        </span>
+</div>
+<div class="flex items-center justify-between pt-gutter-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="truncate">Pettah • Kollupitiya • Ambalangoda Clock Tower</span>
+<button class="text-primary font-label-md text-label-md font-semibold ml-2" type="button">Edit</button>
+</div>
+</div>
+<!-- Route 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-gutter-xs">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-highest text-on-surface font-mono-code text-label-sm font-semibold">100</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Moratuwa ⇄ Pettah</span>
+</div>
+<button class="text-warning-amber flex items-center justify-center p-1" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="flex items-center gap-gutter-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-[11px]">
+          SLTB Red Bus
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-warning-amber-bg text-tertiary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[13px]">alarm</span> 07:15 AM Commute Alert
+        </span>
+</div>
+<div class="flex items-center justify-between pt-gutter-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="truncate">Dehiwala Flyover • Bambalapitiya • Fort</span>
+<button class="text-primary font-label-md text-label-md font-semibold ml-2" type="button">Edit</button>
+</div>
+</div>
+<!-- Route 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-gutter-xs">
+<span class="px-2 py-0.5 rounded-md bg-primary-container text-on-primary font-mono-code text-label-sm font-semibold">EX-1</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Makumbura (Kottawa) ⇄ Galle</span>
+</div>
+<button class="text-warning-amber flex items-center justify-center p-1" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="flex items-center gap-gutter-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-[11px]">
+          Southern Expressway
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-[11px]">
+          Weekend Fast Pass
+        </span>
+</div>
+<div class="flex items-center justify-between pt-gutter-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="truncate">Makumbura Multimodal Hub ⇄ Galle Central</span>
+<button class="text-primary font-label-md text-label-md font-semibold ml-2" type="button">Edit</button>
+</div>
+</div>
+<!-- Add Route Button -->
+<button class="w-full h-touch-min rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-center gap-gutter-xs text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Add New Route</span>
+</button>
+</section>
+<!-- BusEka Pay & Fare Passes -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between px-gutter-xs">
+<div class="flex items-center gap-gutter-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">BusEka Pay &amp; Passes</h3>
+</div>
+<span class="font-mono-code text-label-sm font-semibold text-secondary">Rs. 1,450.00</span>
+</div>
+<!-- Primary LankaPay Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md flex flex-col gap-gutter-md">
+<div class="flex items-start justify-between">
+<div class="flex gap-gutter-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">qr_code_2</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-gutter-xs">
+<span class="font-label-md text-label-md font-bold text-on-surface">LankaQR &amp; SLTB Pass</span>
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px]">Primary</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tap-and-Go contactless pass</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-code text-body-md font-bold text-on-surface">Rs. 1,450</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[12px]">autorenew</span> Auto-reload ON
+          </span>
+</div>
+</div>
+<div class="h-px bg-surface-container-low w-full"></div>
+<!-- Secondary Payment Card -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-gutter-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Visa •••• 4092</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Commercial Bank of Ceylon</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<button class="w-full h-10 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center gap-gutter-xs text-on-surface font-label-md text-label-md font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Payment Method</span>
+</button>
+</div>
+</section>
+<!-- App Data & Offline Settings -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center gap-gutter-xs px-gutter-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">cloud_sync</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Data &amp; Storage</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter-md space-y-gutter-md">
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex gap-gutter-sm flex-1 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Offline Schedule Caching</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">Saves Colombo &amp; Western Province timetables locally for low-connectivity zones.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 touch-min">
+<input checked="" class="sr-only peer toggle-action" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-surface-container-low w-full"></div>
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-gutter-xs">
+<span class="w-2 h-2 rounded-full bg-live-green"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">BusEka v2.4.1 (Build 412)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">SLTB &amp; NTC Transponders Synced</span>
+</div>
+</div>
+</section>
+<!-- Sign Out & Delete Action Group -->
+<div class="flex flex-col items-center gap-gutter-xs pt-gutter-xs">
+<button class="w-full h-touch-min rounded-xl bg-surface-container-lowest text-error font-label-md text-label-md font-semibold shadow-sm hover:bg-error-container/40 transition-colors flex items-center justify-center gap-gutter-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign Out of BusEka</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">National Transport Commission Authorized Partner</span>
+</div>
+</div>
+<script>
+  document.querySelectorAll('.toggle-action').forEach(toggle => {
+    toggle.addEventListener('change', (e) => {
+      // Micro-vibration / tactile feedback simulation
+      if (window.navigator && window.navigator.vibrate) {
+        window.navigator.vibrate(12);
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-gutter-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="live-map" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-sm text-label-sm mt-0.5">Map</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="plan-trip" href="#"><span class="material-symbols-outlined text-[24px]">route</span><span class="font-label-sm text-label-sm mt-0.5">Plan</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="train-schedules" href="#"><span class="material-symbols-outlined text-[24px]">train</span><span class="font-label-sm text-label-sm mt-0.5">Trains</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="crowd-pulse" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-sm text-label-sm mt-0.5">Group</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-touch-min transition-colors duration-150 text-primary font-semibold" data-path="more-hub" href="#"><span class="material-symbols-outlined text-[24px]">menu</span><span class="font-label-sm text-label-sm mt-0.5">More</span></a></div></nav></body></html>

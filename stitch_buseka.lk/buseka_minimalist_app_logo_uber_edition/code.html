@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Canvas -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </linearGradient>
+
+    <!-- Uber-style ultra clean subtle shadow -->
+    <filter id="crispShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <!-- Design System Electric Blue Gradient -->
+    <linearGradient id="primaryBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052FF"/>
+      <stop offset="100%" stop-color="#0041CC"/>
+    </linearGradient>
+
+    <linearGradient id="glassReflection" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Neutral Canvas -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <!-- Uber-Grade Minimal Pure White Squircle Container -->
+  <rect x="76" y="76" width="360" height="360" rx="84" fill="#FFFFFF" filter="url(#crispShadow)" stroke="#F1F5F9" stroke-width="1.5"/>
+
+  <!-- Minimalist Geometric Transit Symbol: Frontal Bus Silhouette -->
+  <g transform="translate(156, 148)">
+    <!-- Wheels / Under-Chassis Footprint -->
+    <rect x="22" y="190" width="34" height="16" rx="8" fill="#0F172A"/>
+    <rect x="144" y="190" width="34" height="16" rx="8" fill="#0F172A"/>
+
+    <!-- Main Bus Chassis in Brand Blue -->
+    <rect x="0" y="20" width="200" height="170" rx="40" fill="url(#primaryBlue)"/>
+
+    <!-- High-End Panoramic Windshield -->
+    <rect x="18" y="38" width="164" height="66" rx="20" fill="url(#glassReflection)"/>
+
+    <!-- Live Route / Electronic Destination Bar (Teal / Cyan Beacon) -->
+    <rect x="68" y="48" width="64" height="6" rx="3" fill="#38BDF8" opacity="0.95"/>
+
+    <!-- Minimalist Front Grill Bar -->
+    <line x1="68" y1="134" x2="132" y2="134" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Precision Headlights (Pure White / Golden Glow) -->
+    <circle cx="38" cy="134" r="10" fill="#FFFFFF"/>
+    <circle cx="38" cy="134" r="5" fill="#FBBF24"/>
+    
+    <circle cx="162" cy="134" r="10" fill="#FFFFFF"/>
+    <circle cx="162" cy="134" r="5" fill="#FBBF24"/>
+
+    <!-- Bumper / Aerodynamic Chin Contour -->
+    <rect x="36" y="162" width="128" height="6" rx="3" fill="#0035A6" opacity="0.8"/>
+
+    <!-- Live GPS Signal Beacon Pulse on Roof (Ceylon Emerald / Uber Green) -->
+    <circle cx="100" cy="8" r="7" fill="#00D084"/>
+  </g>
+</svg>

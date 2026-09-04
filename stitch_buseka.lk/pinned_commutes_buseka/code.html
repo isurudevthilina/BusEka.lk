@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'surface-bright': '#fbf8ff', 'secondary-fixed': '#69ff87', 'surface': '#fbf8ff', 'surface-dark': '#0F172A', 'error': '#ba1a1a', 'on-secondary-fixed': '#002108', 'on-primary-fixed': '#001452', 'on-error': '#ffffff', 'secondary-container': '#5cfd80', 'surface-container-low': '#f3f2ff', 'surface-container-high': '#e7e7f5', 'error-red-bg': '#FEE2E2', 'stale-grey': '#94A3B8', 'on-tertiary': '#ffffff', 'on-tertiary-container': '#ffddd5', 'on-secondary': '#ffffff', 'on-tertiary-fixed-variant': '#891e00', 'tertiary': '#952200', 'on-error-container': '#93000a', 'live-green-bg': '#E8F8EE', 'primary': '#003ec7', 'tertiary-fixed-dim': '#ffb4a1', 'error-container': '#ffdad6', 'outline-variant': '#c3c5d9', 'inverse-surface': '#2e303a', 'tertiary-container': '#bf3003', 'error-red': '#EF4444', 'surface-variant': '#e1e1ef', 'tertiary-fixed': '#ffdbd2', 'inverse-on-surface': '#f0effe', 'on-secondary-container': '#00732c', 'surface-container-highest': '#e1e1ef', 'inverse-primary': '#b7c4ff', 'surface-container-lowest': '#ffffff', 'surface-container': '#ededfb', 'primary-fixed': '#dde1ff', 'on-primary-fixed-variant': '#0038b6', 'warning-amber': '#F59E0B', 'secondary': '#006e2a', 'surface-light': '#F8FAFC', 'live-green': '#00C853', 'secondary-fixed-dim': '#3ce36a', 'surface-tint': '#004ced', 'on-primary': '#ffffff', 'primary-fixed-dim': '#b7c4ff', 'outline': '#737688', 'background': '#fbf8ff', 'on-surface-variant': '#434656', 'primary-container': '#0052ff', 'on-tertiary-fixed': '#3c0800', 'on-secondary-fixed-variant': '#00531e', 'warning-amber-bg': '#FEF3C7', 'on-background': '#191b25', 'on-surface': '#191b25', 'on-primary-container': '#dfe3ff', 'surface-dim': '#d9d9e7' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'gutter-xs': '4px', 'touch-min': '44px', 'gutter-lg': '24px', 'gutter-md': '16px', 'gutter-xl': '32px', 'gutter-sm': '8px' }, 'fontFamily': { 'headline-xl': ['Inter'], 'headline-md': ['Inter'], 'headline-lg': ['Inter'], 'body-md': ['Inter'], 'body-lg': ['Inter'], 'body-sm': ['Inter'], 'label-md': ['Inter'], 'headline-sm': ['Inter'], 'label-sm': ['Inter'], 'mono-code': ['"JetBrains Mono, monospace"'] }, 'fontSize': { 'headline-xl': ['32px', { 'lineHeight': '40px', 'fontWeight': '700' }], 'headline-md': ['20px', { 'lineHeight': '28px', 'fontWeight': '600' }], 'headline-lg': ['24px', { 'lineHeight': '32px', 'fontWeight': '600' }], 'body-md': ['15px', { 'lineHeight': '22px', 'fontWeight': '400' }], 'body-lg': ['16px', { 'lineHeight': '24px', 'fontWeight': '400' }], 'body-sm': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'label-md': ['14px', { 'lineHeight': '20px', 'fontWeight': '500' }], 'headline-sm': ['16px', { 'lineHeight': '24px', 'fontWeight': '600' }], 'label-sm': ['12px', { 'lineHeight': '16px', 'fontWeight': '500' }], 'mono-code': ['18px', { 'lineHeight': '24px', 'letterSpacing': '0.1em', 'fontWeight': '600' }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-md flex items-center justify-between"><div class="flex items-center gap-gutter-sm"><img alt="Minimalist clean modern bus inside a white rounded box with subtle drop shadow, sleek electric transit aesthetic with vibrant teal and amber accents, no text. Brand logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VjchyTnkh6wIrIpoQAfWbWKLL27fdKuqMynBhpGD4mA30hJaL4SQsDOuyDBp32z61zuWFPloxqQPYDszo-YIactM0qodblCKQeieEUJhnPBkB0EbXwQcMrbSYoQm5U0Q0oVLShjP1KDnijLyWXrOYcv1Ymedc5uZA1rQSItnGpEkzhnk5Tad8iHFC9nR5vVRTlEtgrIyWyfO8Gdgw4rMRo8r3JZxH1edRZYF8QY9xt4QVthf5jKhm9VukU"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold leading-none">BusEka</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Sri Lanka</span></div></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Live Map</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-md space-y-4">
+<!-- Top Utility Header with Bilingual Charm & Telemetry Pill -->
+<div class="flex flex-col pt-2 pb-1 space-y-2">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Pinned Commutes</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">සුපුරුදු ගමන් · அடிக்கடி பயணங்கள்</p>
+</div>
+<button aria-label="Pin new route" class="flex items-center justify-center gap-1.5 bg-primary text-on-primary px-3 h-touch-min rounded-xl font-label-md text-label-md shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Pin Route</span>
+</button>
+</div>
+<!-- Telemetry Status Ribbon -->
+<div class="flex items-center justify-between bg-surface-container px-3 py-2 rounded-xl">
+<div class="flex items-center space-x-2">
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-live-green opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-live-green"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">4 Tracked Vehicles Live</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync</span>
+        GPS synced 2s ago
+      </span>
+</div>
+</div>
+<!-- Featured / Next Departure Spotlight Hero -->
+<section class="bg-primary text-on-primary rounded-xl p-4 shadow-md relative overflow-hidden">
+<!-- Subtle route aura watermark -->
+<div class="absolute right-[-14px] -bottom-6 select-none pointer-events-none opacity-10">
+<span class="material-symbols-outlined text-[120px]">directions_bus</span>
+</div>
+<div class="flex items-center justify-between mb-3 relative z-10">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest text-primary font-headline-sm text-headline-sm font-bold tracking-tight">
+          100
+        </span>
+<span class="font-label-sm text-label-sm bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full">
+          WP ND-4521
+        </span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-live-green"></span>
+        On Time
+      </span>
+</div>
+<div class="relative z-10">
+<div class="font-label-sm text-label-sm text-on-primary-container font-medium">NEXT UPCOMING COMMUTE</div>
+<div class="font-headline-md text-headline-md font-bold leading-tight mt-0.5">Moratuwa ➔ Colombo Fort</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-xl text-headline-xl font-bold tracking-tight">07:45 AM</span>
+<span class="font-headline-sm text-headline-sm text-secondary-fixed font-semibold">Departs in 8 min</span>
+</div>
+<!-- Live GPS Progress Track -->
+<div class="mt-3 bg-surface-container-lowest/20 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full w-[78%] rounded-full transition-all duration-700"></div>
+</div>
+<div class="flex justify-between items-center text-on-primary-container font-label-sm text-label-sm mt-1.5">
+<span>Current: Ratmalana Station (3.2 km away)</span>
+<span class="font-semibold">Bay 03</span>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">airline_seat_recline_normal</span>
+<span>Seats available (Low crowd)</span>
+</div>
+<button class="flex items-center gap-1.5 bg-surface-container-lowest text-primary px-4 h-touch-min rounded-xl font-headline-sm text-headline-sm font-semibold shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px] text-primary">near_me</span>
+<span>Quick Track</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section Title -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">push_pin</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">All Saved Daily Routes</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">4 Active</span>
+</div>
+<!-- Commute Cards Vertical Stack -->
+<div class="space-y-3">
+<!-- Card 1: Route 100 Express -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm font-bold">
+            100
+          </span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">Galle Road Corridor</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Moratuwa ➔ Pettah / Fort</div>
+</div>
+</div>
+<span class="bg-live-green-bg text-secondary font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-live-green animate-pulse"></span>
+          On Time
+        </span>
+</div>
+<!-- Departure & Crowd Metric Row -->
+<div class="mt-3 flex items-baseline justify-between">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">07:45 AM</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">in 8 min</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Vehicle: WP ND-4521 · Bay 3</div>
+</div>
+<!-- Quick Track Button -->
+<button class="flex items-center justify-center gap-1.5 px-3 h-touch-min bg-surface-container text-primary rounded-xl font-label-md text-label-md font-semibold active:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span>Live Map</span>
+</button>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">airline_seat_recline_normal</span>
+          Low Crowd (SLTB Express)
+        </span>
+<span class="text-on-surface font-mono-code text-[12px]">Frequency 6m</span>
+</div>
+</article>
+<!-- Card 2: Route 138 (Delayed alert) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-headline-sm text-headline-sm font-bold">
+            138
+          </span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">High Level Road</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Maharagama ➔ Colombo Fort</div>
+</div>
+</div>
+<span class="bg-warning-amber-bg text-tertiary font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+          +12m Delay
+        </span>
+</div>
+<!-- Departure & Crowd Metric Row -->
+<div class="mt-3 flex items-baseline justify-between">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">08:10 AM</span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">Traffic at Nugegoda</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Vehicle: WP NA-9812 · Next ~18m behind</div>
+</div>
+<!-- Quick Track Button -->
+<button class="flex items-center justify-center gap-1.5 px-3 h-touch-min bg-surface-container text-primary rounded-xl font-label-md text-label-md font-semibold active:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span>Live Map</span>
+</button>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">group</span>
+          Heavy Crowding (Standing only)
+        </span>
+<span class="text-on-surface font-mono-code text-[12px]">Every 4-6m</span>
+</div>
+</article>
+<!-- Card 3: Route 383/2 Semi-Luxury Coastal -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 rounded-lg bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm font-bold">
+            383/2
+          </span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">Southern Coastal Link</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Colombo Fort ➔ Ambalangoda</div>
+</div>
+</div>
+<span class="bg-live-green-bg text-secondary font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-live-green"></span>
+          On Time
+        </span>
+</div>
+<div class="mt-3 flex items-baseline justify-between">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">08:30 AM</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">in 45 min</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Vehicle: WP ND-7217 · Semi-Luxury AC</div>
+</div>
+<button class="flex items-center justify-center gap-1.5 px-3 h-touch-min bg-surface-container text-primary rounded-xl font-label-md text-label-md font-semibold active:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span>Live Map</span>
+</button>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">ac_unit</span>
+          AC Express · Sensor Active
+        </span>
+<span class="text-on-surface font-mono-code text-[12px]">Platform Bay 06</span>
+</div>
+</article>
+<!-- Card 4: Route EX-1 Southern Expressway -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm font-bold">
+            EX-1
+          </span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">Expressway Hub (E01)</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Makumbura MMC ➔ Galle</div>
+</div>
+</div>
+<span class="bg-live-green-bg text-secondary font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-live-green"></span>
+          Scheduled
+        </span>
+</div>
+<div class="mt-3 flex items-baseline justify-between">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">09:00 AM</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">in 1h 15m</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Vehicle: WP NC-3304 · Reserved Seats</div>
+</div>
+<button class="flex items-center justify-center gap-1.5 px-3 h-touch-min bg-surface-container text-primary rounded-xl font-label-md text-label-md font-semibold active:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span>Live Map</span>
+</button>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+          Highway Non-stop (~55 mins)
+        </span>
+<span class="text-on-surface font-mono-code text-[12px]">Bay 02 MMC</span>
+</div>
+</article>
+</div>
+<!-- Commuter Departure Smart Notification Toggle -->
+<section class="bg-surface-container-low rounded-xl p-4 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">notifications_active</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Commute Reminders</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Alert me 15 mins before departure</div>
+</div>
+</div>
+<!-- Clean Switch Indicator -->
+<label class="relative inline-flex items-center cursor-pointer min-h-touch-min min-w-touch-min">
+<input checked="" class="sr-only peer" id="commute-alert-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[14px] after:left-[4px] after:bg-surface-container-lowest after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</section>
+<!-- Manage & Edit Reorder Action Bar -->
+<div class="pt-1 pb-4 flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<button class="flex items-center gap-1.5 h-touch-min px-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">swap_vert</span>
+<span>Reorder Commutes</span>
+</button>
+<button class="flex items-center gap-1.5 h-touch-min px-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Manage Routes</span>
+</button>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for quick route tracking triggers
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.innerText.includes('Live Map') || btn.innerText.includes('Quick Track')) {
+        btn.classList.add('scale-95');
+        setTimeout(() => btn.classList.remove('scale-95'), 150);
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-gutter-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-touch-min transition-colors duration-150 text-primary font-semibold" data-path="live-map" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-sm text-label-sm mt-0.5">Map</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="plan-trip" href="#"><span class="material-symbols-outlined text-[24px]">route</span><span class="font-label-sm text-label-sm mt-0.5">Plan</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="train-schedules" href="#"><span class="material-symbols-outlined text-[24px]">train</span><span class="font-label-sm text-label-sm mt-0.5">Trains</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="crowd-pulse" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-sm text-label-sm mt-0.5">Group</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-touch-min text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="more-hub" href="#"><span class="material-symbols-outlined text-[24px]">menu</span><span class="font-label-sm text-label-sm mt-0.5">More</span></a></div></nav></body></html>
