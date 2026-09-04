@@ -1,34 +1,60 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
 
-/* DESIGN SYSTEM — CLAUDE.md §5.1 / PLAN.md §4.1. This is the one place these
-   tokens are defined; every component uses the semantic names, not raw hex. */
+/* ─── DESIGN SYSTEM — Light theme tokens from Stitch buseka design ─────────── */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --color-primary: #1d4ed8;
-  --color-live: #16a34a;
-  --color-delayed: #d97706;
-  --color-stale: #6b7280;
+  /* Brand colours (Stitch palette) */
+  --color-primary:   #003ec7;
+  --color-secondary: #006e2a;
+  --color-tertiary:  #952200;
 
-  --color-page: #f5f7fa;
-  --color-surface: #ffffff;
-  --color-text: #0f172a;
+  /* Semantic status */
+  --color-live:    #00C853;
+  --color-delayed: #F59E0B;
+  --color-stale:   #94A3B8;
+  --color-error:   #ba1a1a;
+
+  /* Surface / page tokens — LIGHT only */
+  --color-page:              #fbf8ff;
+  --color-surface:           #ffffff;
+  --color-surface-low:       #f3f2ff;
+  --color-surface-container: #ededfb;
+  --color-surface-high:      #e7e7f5;
+  --color-surface-highest:   #e1e1ef;
+
+  /* Text */
+  --color-text:         #191b25;
+  --color-text-muted:   #434656;
+  --color-outline:      #737688;
+  --color-outline-var:  #c3c5d9;
+
+  /* Border */
   --color-border: #e2e8f0;
 
-  --color-page-dark: #0b1220;
-  --color-surface-dark: #131c2e;
-  --color-text-dark: #e6edf7;
-  --color-border-dark: #1e293b;
+  /* Alias kept for compatibility with pages that use old names */
+  --color-page-dark:     #fbf8ff;
+  --color-surface-dark:  #ffffff;
+  --color-text-dark:     #191b25;
+  --color-border-dark:   #e2e8f0;
+
+  /* Live green bg tint */
+  --color-live-bg: #E8F8EE;
+
+  /* Warning amber */
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FEF3C7;
 }
 
+/* Force light scheme — never follow system dark mode */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   height: 100%;
 }
 
@@ -39,26 +65,25 @@ body {
   color: var(--color-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--color-page-dark);
-    color: var(--color-text-dark);
-  }
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
+/* Material Symbols defaults */
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
   vertical-align: middle;
   line-height: 1;
 }
 
-.pb-safe {
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+/* Safe-area helpers for iOS */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+
+/* Live pulse animation */
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
 }
-.pt-safe {
-  padding-top: env(safe-area-inset-top, 0px);
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }

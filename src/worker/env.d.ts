@@ -1,7 +1,9 @@
+/// <reference types="@cloudflare/workers-types" />
+
 // The only integration contract (DESIGN.md §4). Every route produces or
 // consumes Vehicle[] — never a parallel shape.
 interface Env {
-  DB: D1Database;
+  DB: D1Databahttp://localhost:5173/se;
   CACHE: KVNamespace;
   AI: Ai;
   ADMIN_KEY: string;
@@ -11,3 +13,4 @@ interface Env {
 
 // The Vehicle type itself lives in src/shared/vehicle.d.ts so the web project
 // can see it too, without pulling @cloudflare/workers-types into the browser build.
+

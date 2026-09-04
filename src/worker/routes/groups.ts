@@ -1,3 +1,4 @@
+/// <reference path="../../shared/vehicle.d.ts" />
 import { Hono } from "hono";
 import { getCookie, setCookie } from "hono/cookie";
 import {

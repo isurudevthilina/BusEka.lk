@@ -1,3 +1,4 @@
+/// <reference path="../../shared/vehicle.d.ts" />
 const UPSTREAM_URL = "https://api.spgps.lk/api/public/bus-live-locations-for-map";
 
 // Upstream's own shape is undocumented and every field below has been seen
@@ -38,7 +39,12 @@ export function normaliseSprpta(raw: unknown): Vehicle[] {
 }
 
 export async function fetchSprpta(): Promise<Vehicle[]> {
-  const res = await fetch(UPSTREAM_URL, { headers: { accept: "application/json" } });
+  const res = await fetch(UPSTREAM_URL, { 
+    headers: { 
+      accept: "application/json",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    } 
+  });
   if (!res.ok) throw new Error(`sprpta upstream ${res.status}`);
   const data = await res.json();
   return normaliseSprpta(data);

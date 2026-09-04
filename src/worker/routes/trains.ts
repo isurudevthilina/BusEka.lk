@@ -33,7 +33,7 @@ trains.get("/", async (c) => {
   ).all<BoardRow>();
 
   const now = Date.now();
-  const board = (results ?? []).map((row) => ({
+  const board = (results ?? []).map((row: BoardRow) => ({
     id: row.id,
     trainNo: row.train_no,
     name: row.name,
