@@ -126,6 +126,11 @@ _Add the demo video link here._
 
 ## Future work
 
+- `/driver/:id`, `/commutes`, `/settings` — built to match the Stitch design export at the
+  team's request, but they're static showcases with no backend: no driver-review data, no
+  saved-commute storage, and no accounts or payments. Turning them into real features needs
+  a driver-profile table, a per-user saved-routes table, and an actual auth/session model —
+  none of which exist yet.
 - `/route/:id`, `/stop/:id` — full route polylines and per-stop departure boards (folded
   into the `/map` vehicle sheet for now).
 - Group ETA-to-a-saved-stop on `/g/:code`.

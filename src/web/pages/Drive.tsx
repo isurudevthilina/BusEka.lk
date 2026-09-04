@@ -26,9 +26,11 @@ export function Drive() {
   const [simulating, setSimulating] = useState(false);
   const [accuracy, setAccuracy] = useState<number | null>(null);
   const [pings, setPings] = useState(0);
+  const [seconds, setSeconds] = useState(0);
   const [position, setPosition] = useState<{ lat: number; lng: number; speed: number } | null>(null);
   const watchIdRef = useRef<number | null>(null);
   const simIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (!token) return;
@@ -39,6 +41,7 @@ export function Drive() {
     () => () => {
       if (watchIdRef.current != null) navigator.geolocation.clearWatch(watchIdRef.current);
       if (simIntervalRef.current) clearInterval(simIntervalRef.current);
+      if (timerRef.current) clearInterval(timerRef.current);
     },
     [],
   );
@@ -50,6 +53,12 @@ export function Drive() {
     setPosition({ lat, lng, speed });
   }
 
+  function startTimer() {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setSeconds(0);
+    timerRef.current = setInterval(() => setSeconds((s) => s + 1), 1000);
+  }
+
   async function startReal() {
     if (!navigator.geolocation) {
       setPhase("blocked");
@@ -59,7 +68,10 @@ export function Drive() {
     navigator.wakeLock?.request("screen").catch(() => {});
     watchIdRef.current = navigator.geolocation.watchPosition(
       (pos) => {
-        setPhase("broadcasting");
+        setPhase((prev) => {
+          if (prev !== "broadcasting") startTimer();
+          return "broadcasting";
+        });
         setSimulating(false);
         setAccuracy(pos.coords.accuracy);
         sendPing(pos.coords.latitude, pos.coords.longitude, (pos.coords.speed ?? 0) * 3.6, pos.coords.accuracy);
@@ -75,6 +87,7 @@ export function Drive() {
     await post(`/api/drive/${token}/start`).catch(() => {});
     setPhase("broadcasting");
     setSimulating(true);
+    startTimer();
     let i = 0;
     simIntervalRef.current = setInterval(() => {
       const [lat, lng] = SIM_ROUTE[i % SIM_ROUTE.length];
@@ -92,6 +105,10 @@ export function Drive() {
       clearInterval(simIntervalRef.current);
       simIntervalRef.current = null;
     }
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
     await post(`/api/drive/${token}/stop`).catch(() => {});
     setPhase("idle");
     setSimulating(false);
@@ -99,17 +116,50 @@ export function Drive() {
     setPosition(null);
   }
 
+  const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const secs = String(seconds % 60).padStart(2, "0");
+
   return (
     <div className="min-h-screen flex flex-col bg-page dark:bg-page-dark text-text dark:text-text-dark">
-      <header className="h-16 px-4 flex items-center gap-3 border-b border-border dark:border-border-dark">
+      <header className="h-16 px-4 flex items-center gap-3 border-b border-border dark:border-border-dark shrink-0">
         <img src="/icon.png" className="h-7 w-7 rounded-md" alt="" />
         <div>
-          <div className="font-semibold text-[15px]">{info?.label ?? "Loading…"}</div>
-          <div className="text-[12px] font-mono text-text/60 dark:text-text-dark/60">{info?.plate}</div>
+          <div className="font-semibold text-[15px]">Active Ride Tracking</div>
+          <div className="text-[12px] text-text/60 dark:text-text-dark/60">
+            {info?.label ?? "Loading…"} {info?.plate && <span className="font-mono">· {info.plate}</span>}
+          </div>
         </div>
       </header>
 
       <div className="flex-1 px-4 py-5 flex flex-col gap-4 max-w-lg mx-auto w-full">
+        {/* Vehicle identity card */}
+        <div className="rounded-xl bg-surface dark:bg-surface-dark shadow-sm p-4 flex items-center justify-between">
+          <div className="flex flex-col min-w-0 pr-2">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary text-[20px]">directions_bus</span>
+              <h2 className="font-bold text-[18px] truncate tracking-tight">{info?.label ?? "Vehicle"}</h2>
+            </div>
+            <div className="mt-1 flex items-center gap-2">
+              <span className="font-mono text-[13px] bg-page dark:bg-page-dark px-2 py-0.5 rounded tracking-wider uppercase">
+                {info?.plate ?? "—"}
+              </span>
+              {info?.groupName && <span className="text-[12px] text-text/60 dark:text-text-dark/60">{info.groupName}</span>}
+            </div>
+          </div>
+          <div
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] uppercase font-bold tracking-wider shrink-0 ${
+              phase === "broadcasting"
+                ? "bg-live/15 text-live"
+                : phase === "blocked"
+                  ? "bg-delayed/15 text-delayed"
+                  : "bg-stale/15 text-stale"
+            }`}
+          >
+            <span className={`w-2.5 h-2.5 rounded-full ${phase === "broadcasting" ? "bg-live animate-pulse" : phase === "blocked" ? "bg-delayed" : "bg-stale"}`} />
+            {phase === "broadcasting" ? "Live transmit" : phase === "blocked" ? "GPS blocked" : "Offline"}
+          </div>
+        </div>
+
         {phase === "idle" && (
           <>
             <button
@@ -118,6 +168,7 @@ export function Drive() {
             >
               <span className="material-symbols-outlined text-[44px]">play_circle</span>
               <span className="text-[22px] font-bold uppercase tracking-tight">Start trip</span>
+              <span className="text-[12px] font-semibold uppercase tracking-widest text-white/85">Begin GPS transmission</span>
             </button>
             <button
               onClick={startSimulate}
@@ -126,24 +177,36 @@ export function Drive() {
               <span className="material-symbols-outlined text-[20px] text-primary">navigation</span>
               Simulate route (demo)
             </button>
-            <p className="text-[13px] text-text/60 dark:text-text-dark/60 text-center">
-              Your location is shared only with people who have this van's group code. Sharing stops when you tap End
-              trip.
-            </p>
+            <div className="rounded-xl bg-surface dark:bg-surface-dark shadow-sm p-4 flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-page dark:bg-page-dark flex items-center justify-center shrink-0 text-primary">
+                <span className="material-symbols-outlined text-[20px]">shield</span>
+              </div>
+              <div>
+                <div className="font-semibold text-[15px]">Your location is shared only with people who have this van's group code</div>
+                <p className="text-[13px] text-text/60 dark:text-text-dark/60 mt-0.5">
+                  Sharing is encrypted end to end and stops completely the moment you press "End trip."
+                </p>
+              </div>
+            </div>
           </>
         )}
 
         {phase === "broadcasting" && (
           <>
-            <div className="rounded-xl bg-surface dark:bg-surface-dark border border-border dark:border-border-dark p-4 flex items-center gap-3">
-              <span className="relative flex h-4 w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-live opacity-75" />
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-live" />
-              </span>
-              <div>
-                <div className="font-semibold text-[15px]">LIVE{simulating ? " (demo)" : ""}</div>
-                <div className="text-[12px] text-text/60 dark:text-text-dark/60">Broadcasting your position</div>
+            <div className="rounded-xl bg-surface dark:bg-surface-dark shadow-sm p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-4 w-4">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-live opacity-75" />
+                  <span className="relative inline-flex rounded-full h-4 w-4 bg-live" />
+                </span>
+                <div>
+                  <div className="font-semibold text-[15px]">LIVE broadcasting{simulating ? " (demo)" : ""}</div>
+                  <div className="text-[12px] text-text/60 dark:text-text-dark/60">Sending GPS coordinates to the cloud</div>
+                </div>
               </div>
+              <span className="font-mono text-[15px] text-live font-bold">
+                {mins}:{secs}
+              </span>
             </div>
 
             <div className="grid grid-cols-3 gap-2">
@@ -179,6 +242,7 @@ export function Drive() {
             >
               <span className="material-symbols-outlined text-[40px]">stop_circle</span>
               <span className="text-[20px] font-bold uppercase tracking-tight">End trip</span>
+              <span className="text-[12px] font-semibold uppercase tracking-widest text-white/85">Stop sharing GPS location</span>
             </button>
           </>
         )}
@@ -220,7 +284,7 @@ export function Drive() {
 
 function Stat({ icon, value, label }: { icon: string; value: string; label: string }) {
   return (
-    <div className="rounded-xl bg-surface dark:bg-surface-dark border border-border dark:border-border-dark p-3 flex flex-col items-center text-center gap-1">
+    <div className="rounded-xl bg-surface dark:bg-surface-dark shadow-sm p-3 flex flex-col items-center text-center gap-1">
       <span className="material-symbols-outlined text-live text-[22px]">{icon}</span>
       <span className="font-bold text-[16px]">{value}</span>
       <span className="text-[11px] text-text/60 dark:text-text-dark/60">{label}</span>

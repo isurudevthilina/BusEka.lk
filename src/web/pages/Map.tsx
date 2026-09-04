@@ -8,10 +8,14 @@ import { EmptyState } from "../components/EmptyState";
 
 type FleetSnapshot = { vehicles: Vehicle[]; total: number; live: number; ts: number; stale: boolean };
 
+// Source-based chips, kept to values Vehicle.source can actually hold
+// (DESIGN.md's MetroBus/Depot/Community split isn't data the feed carries).
+const FILTERS = ["All", "SPRPTA", "Group", "Moving only"] as const;
+
 export function MapPage() {
   const { data, loading, refresh } = useLive<FleetSnapshot>("/api/fleet/snapshot", 6000);
   const [search, setSearch] = useState("");
-  const [movingOnly, setMovingOnly] = useState(false);
+  const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const vehicles = data?.vehicles ?? [];
@@ -19,11 +23,13 @@ export function MapPage() {
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return vehicles.filter((v) => {
-      if (movingOnly && v.speedKmh <= 2) return false;
+      if (filter === "Moving only" && v.speedKmh <= 2) return false;
+      if (filter === "SPRPTA" && v.source !== "sprpta") return false;
+      if (filter === "Group" && v.source !== "group") return false;
       if (!q) return true;
       return v.label.toLowerCase().includes(q) || (v.routeNo ?? "").toLowerCase().includes(q);
     });
-  }, [vehicles, search, movingOnly]);
+  }, [vehicles, search, filter]);
 
   const selected = filtered.find((v) => v.id === selectedId) ?? null;
 
@@ -87,7 +93,7 @@ export function MapPage() {
           </div>
 
           <div className="pointer-events-auto">
-            <FilterChips options={["All", "Moving only"]} active={movingOnly ? "Moving only" : "All"} onChange={(v) => setMovingOnly(v === "Moving only")} />
+            <FilterChips options={[...FILTERS]} active={filter} onChange={(v) => setFilter(v as (typeof FILTERS)[number])} />
           </div>
         </div>
 
@@ -97,7 +103,7 @@ export function MapPage() {
             <div className="bg-surface dark:bg-surface-dark rounded-2xl shadow-xl">
               <EmptyState
                 title="No buses reporting right now"
-                message={search || movingOnly ? "Try clearing your search or filters." : "The live feed has nothing to show at the moment."}
+                message={search || filter !== "All" ? "Try clearing your search or filters." : "The live feed has nothing to show at the moment."}
                 action={{ label: "Retry", onClick: refresh }}
               />
             </div>

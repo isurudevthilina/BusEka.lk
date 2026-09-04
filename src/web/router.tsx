@@ -12,8 +12,13 @@ import { Owner } from "./pages/Owner";
 import { Drive } from "./pages/Drive";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/NotFound";
+import { DriverProfile } from "./pages/DriverProfile";
+import { Commutes } from "./pages/Commutes";
+import { Settings } from "./pages/Settings";
 
-// All 12 DESIGN.md §7 routes, declared once here. Nothing gets renamed.
+// The 12 DESIGN.md §7 routes, plus three extra pages (/driver/:id,
+// /commutes, /settings) requested outside the spec to match the Stitch
+// screen set — see CLAUDE.md §1 rule 5. Nothing in the original 12 gets renamed.
 export function AppRoutes() {
   return (
     <Routes>
@@ -29,6 +34,9 @@ export function AppRoutes() {
         <Route path="/owner" element={<Owner />} />
         <Route path="/drive/:token" element={<Drive />} />
         <Route path="/about" element={<About />} />
+        <Route path="/driver/:id" element={<DriverProfile />} />
+        <Route path="/commutes" element={<Commutes />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

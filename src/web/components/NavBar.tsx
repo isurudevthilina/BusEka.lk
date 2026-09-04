@@ -6,7 +6,7 @@ const items = [
   { to: "/plan", label: "Plan", icon: "route" },
   { to: "/trains", label: "Trains", icon: "train" },
   { to: "/join", label: "Group", icon: "groups" },
-  { to: "/about", label: "More", icon: "menu" },
+  { to: "/settings", label: "More", icon: "menu" },
 ];
 
 export function NavBar() {

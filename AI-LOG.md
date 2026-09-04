@@ -47,3 +47,26 @@ places at runtime, both with a 6-second timeout and a mandatory non-AI fallback:
 
 The model never computes a distance, an ETA, or any other number — see `src/worker/lib/
 geo.ts` and `eta.ts` for the only place those are calculated.
+
+## Claude Code — follow-up session ("use these screens strictly in the web app")
+
+The user pointed at the same Stitch export (`stitch_buseka.lk/`) and asked for the screens
+to be used strictly, including `driver_profile_uncle_nihal_buseka`, `pinned_commutes_buseka`
+and `settings_travel_preferences_buseka` — the three screens the previous session left out
+because they have no `DESIGN.md` route. Before touching code, Claude flagged the conflict
+with `CLAUDE.md` §1 rule 5 and the fabricated live-train-GPS / fare-comparison / driver-chat
+content in three of the screens (`AskUserQuestion`); the user chose to build all of it as
+designed.
+
+| # | Prompt (summarised) | Purpose | What was changed from the raw output |
+|---|---|---|---|
+| 1 | Restyle `Drive.tsx`, `Group.tsx`, `Plan.tsx`, `Trains.tsx` against the Stitch layouts already on file | Bring the existing, working pages closer to the Stitch visual language (broadcast timer, group invite card, origin/destination fields, train search) | Kept every page wired to its real endpoint; call/chat buttons on `Group.tsx` and `DriverProfile.tsx` are inert (`isn't wired up in this demo yet`) rather than dialing a fake number; `Plan.tsx`'s fare pill is `journeyKm × Rs 6/km` computed in TypeScript from the real distance, not invented; dropped the Stitch train screen's fabricated live speed/ETA/crowd numbers since Sri Lanka Railways has no GPS feed to back them (kept the real passenger-report data instead) — same rule-6 line the previous session drew |
+| 2 | Build `src/web/pages/DriverProfile.tsx` (`/driver/:id`), `Commutes.tsx` (`/commutes`), `Settings.tsx` (`/settings`) | The three screens with no `DESIGN.md` route, built anyway per the user's explicit choice | All three are static showcases with a code comment saying so — no backend, no persisted state. Dropped Stitch's "BusEka Pay & Passes" (fake saved card) and "Sign Out" from the settings screen: those imply a real payments/accounts system this app doesn't have, which is a different risk from the rest (fabricated UI copy) — flagged to the user rather than built |
+| 3 | Store the pasted secrets (`ADMIN_KEY`, `COOKIE_SECRET`, `WIALON_HOST`, three `WIALON_TOKEN_*` values) and D1/KV ids | User pasted real values mid-task | Secrets went to `.dev.vars` (gitignored) and `.dev.vars.example` got the new key names with empty values, per `CLAUDE.md` §1 rule 10; the D1/KV ids (not secrets) went into `wrangler.jsonc` with `remote: true` as pasted |
+| 4 | `npx tsc --noEmit`, `npm run build` | Verify everything compiles | Both passed. Could not do a live browser check: the Cloudflare Vite plugin needs `CLOUDFLARE_API_TOKEN` to reach the remote `AI` binding in this non-interactive sandbox, which isn't available here — noted so this isn't overstated as "tested in the browser" |
+
+**Honesty note:** the fabricated numbers Stitch generated for the train screen (54 km/h,
+210 pings, a specific delay countdown) are **not** in the shipped page — only the real
+passenger-report fields are. Everything else fabricated in the three new pages (ratings,
+reviews, badges, saved routes, toggle states) is clearly synthetic demo content with no
+backend, and is called out as such in each file's header comment.

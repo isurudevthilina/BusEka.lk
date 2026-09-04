@@ -12,15 +12,15 @@
     {
       "binding": "DB",
       "database_name": "buseka",
-      // Run `npx wrangler d1 create buseka` after `npx wrangler login`, then paste the id here.
-      "database_id": "PASTE_D1_ID_HERE"
+      "database_id": "2903d46b-b90f-41d7-9e54-900fc1666a30",
+      "remote": true
     }
   ],
   "kv_namespaces": [
     {
       "binding": "CACHE",
-      // Run `npx wrangler kv namespace create CACHE` after `npx wrangler login`, then paste the id here.
-      "id": "PASTE_KV_ID_HERE"
+      "id": "9011ce804ab64d9fb900477da6fdcbfc",
+      "remote": true
     }
   ],
   "ai": { "binding": "AI" },
